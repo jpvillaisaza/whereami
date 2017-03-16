@@ -1,0 +1,15 @@
+dependencies:
+
+  cache_directories:
+    - elm-stuff/build-artifacts/
+
+  pre:
+    - npm install --global elm
+
+  override:
+    - elm make --yes
+
+test:
+
+  override:
+    - echo "Where Am I? Geolocation in Elm"
