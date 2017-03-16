@@ -12,4 +12,4 @@ dependencies:
 test:
 
   override:
-    - echo "Where Am I? Geolocation in Elm"
+    - elm make WhereAmI.elm --output=whereami.js --warn
