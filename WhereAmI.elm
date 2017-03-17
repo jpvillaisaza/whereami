@@ -6,7 +6,6 @@ import Geolocation exposing (Location)
 
 -- elm-lang/html
 import Html exposing (Html)
-import Html.Events
 
 
 type alias Model =
@@ -14,24 +13,18 @@ type alias Model =
 
 
 type Msg
-  = RequestUpdate
-  | Update (Result Geolocation.Error Location)
+  = Update (Result Geolocation.Error Location)
 
 
 init : (Model, Cmd Msg)
 init =
   ( Ok Nothing
-  , requestLocation
+  , Task.attempt Update Geolocation.now
   )
 
 
-requestLocation : Cmd Msg
-requestLocation =
-  Task.attempt Update Geolocation.now
-
-
 subscriptions : Model -> Sub Msg
-subscriptions model =
+subscriptions _ =
   Geolocation.changes (Update << Ok)
 
 
@@ -45,20 +38,12 @@ view model =
     , Html.div
         []
         [ Html.text (toString model) ]
-    , Html.button
-        [ Html.Events.onClick RequestUpdate ]
-        [ Html.text "Update" ]
     ]
 
 
 update : Msg -> Model -> (Model, Cmd Msg)
 update msg model =
   case msg of
-    RequestUpdate ->
-      ( model
-      , requestLocation
-      )
-
     Update result ->
       ( Result.map Just result
       , Cmd.none
