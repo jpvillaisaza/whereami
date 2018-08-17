@@ -1,0 +1,10 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/node:6
+    steps:
+      - run: git clone https://github.com/jpvillaisaza/whereami.git
+      - run: sudo npm install --global elm
+      - run: elm make --yes
+      # - run: elm make WhereAmI.elm --output=whereami.js --warn
