@@ -9,14 +9,22 @@ whereAmI = d => {
 
   success = position => {
     status.textContent = "";
-    document.querySelector("#timestamp").textContent = new Date(position.timestamp).toLocaleTimeString();
-    document.querySelector("#latitude").textContent = position.coords.latitude;
-    document.querySelector("#longitude").textContent = position.coords.longitude;
-    document.querySelector("#accuracy").textContent = position.coords.accuracy;
-    document.querySelector("#altitude").textContent = position.coords.altitude;
-    document.querySelector("#altitudeAccuracy").textContent = position.coords.altitudeAccuracy;
-    document.querySelector("#heading").textContent = position.coords.heading;
-    document.querySelector("#speed").textContent = position.coords.speed;
+    document.querySelector("#timestamp").textContent =
+      new Date(position.timestamp).toLocaleTimeString();
+    document.querySelector("#latitude").textContent =
+      position.coords.latitude + "º";
+    document.querySelector("#longitude").textContent =
+      position.coords.longitude + "º";
+    document.querySelector("#accuracy").textContent =
+      position.coords.accuracy + " m";
+    document.querySelector("#altitude").textContent =
+      position.coords.altitude ? position.coords.altitude + " m" : null;
+    document.querySelector("#altitudeAccuracy").textContent =
+      position.coords.altitudeAccuracy ? position.coords.altitudeAccuracy + " m" : null;
+    document.querySelector("#heading").textContent =
+      position.coords.heading !== null ? (isNaN(position.coords.heading) ? null : position.coords.heading + "º") : null;
+    document.querySelector("#speed").textContent =
+      position.coords.speed ? position.coords.speed +  " m/s" : null;
   }
 
   error = error => {
