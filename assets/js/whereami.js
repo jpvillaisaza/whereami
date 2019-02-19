@@ -9,7 +9,7 @@ whereAmI = d => {
 
   success = position => {
     status.textContent = "";
-    document.querySelector("#timestamp").textContent = position.timestamp;
+    document.querySelector("#timestamp").textContent = new Date(position.timestamp).toLocaleTimeString();
     document.querySelector("#latitude").textContent = position.coords.latitude;
     document.querySelector("#longitude").textContent = position.coords.longitude;
     document.querySelector("#accuracy").textContent = position.coords.accuracy;
@@ -21,13 +21,13 @@ whereAmI = d => {
 
   error = error => {
     switch (error.code) {
-      case 1: // PERMISSION_DENIED
+      case PERMISSION_DENIED:
         status.textContent = error.message;
         break;
-      case 2: // POSITION_UNAVAILABLE
+      case POSITION_UNAVAILABLE:
         status.textContent = error.message;
         break;
-      case 3: // TIMEOUT
+      case TIMEOUT:
         status.textContent = error.message;
         break;
       default:
