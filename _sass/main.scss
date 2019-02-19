@@ -1,27 +1,20 @@
-html {
-}
-
 body {
   font-family: sans-serif;
-  font-size: 1.063em;
-  margin: 0 auto;
 }
 
 main {
-  margin: 0 auto;
-  max-width: 500px;
-  text-align: center;
+  margin: 32px auto;
+  max-width: 512px;
 }
 
 form {
-  margin: 20px;
+  text-align: center;
   button {
     font-size: inherit;
   }
 }
 
 table {
-  margin: 0 auto;
   border-collapse: collapse;
   width: 100%;
 }
@@ -38,4 +31,12 @@ th {
 
 td {
   text-align: left;
+}
+
+footer {
+  text-align: center;
+}
+
+.section {
+  margin: 16px 0;
 }
