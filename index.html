@@ -1,25 +1,69 @@
 <!doctype html>
-
 <html lang="en">
-
   <head>
     <meta charset="utf-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
     <title>Where Am I?</title>
-
+    <link rel="stylesheet" href="/assets/css/styles.css">
   </head>
-
   <body>
-
-    <div id="whereami"></div>
-
-    <script src="whereami.js"></script>
-    <script>
-      Elm.Main.embed(document.getElementById("whereami"));
-    </script>
-
+    <main>
+      <div>
+        <p id="status"></p>
+      </div>
+      <form id="form">
+        <fieldset>
+          <legend>
+            Position options
+          </legend>
+          <input type="checkbox" id="enableHighAccuracy" name="enableHighAccuracy">
+          <label for="enableHighAccuracy">
+            Enable high accuracy
+          </label>
+        </fieldset>
+        <div>
+          <button>
+            Where Am I?
+          </button>
+        </div>
+      </form>
+      <table>
+        <tbody>
+          <tr>
+            <th>Timestamp</th>
+            <td id="timestamp"></td>
+          </tr>
+          <tr>
+            <th>Latitude</th>
+            <td id="latitude"></td>
+          </tr>
+          <tr>
+            <th>Longitude</th>
+            <td id="longitude"></td>
+          </tr>
+          <tr>
+            <th>Accuracy (meters)</th>
+            <td id="accuracy"></td>
+          </tr>
+          <tr>
+            <th>Altitude</th>
+            <td id="altitude"></td>
+          </tr>
+          <tr>
+            <th>Altitude accuracy (meters)</th>
+            <td id="altitudeAccuracy"></td>
+          </tr>
+          <tr>
+            <th>Heading</th>
+            <td id="heading"></td>
+          </tr>
+          <tr>
+            <th>Speed (m/s)</th>
+            <td id="speed"></td>
+          </tr>
+        </tbody>
+      </table>
+    </main>
+    <script src="/assets/js/whereami.js"></script>
   </body>
-
 </html>
