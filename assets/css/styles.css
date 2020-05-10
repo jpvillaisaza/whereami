@@ -1,17 +1,14 @@
 body {
+  display: grid;
   font-family: system-ui, sans-serif;
+  gap: 2em;
+  place-items: center;
 }
 
 main {
-  margin: 32px auto;
-  max-width: 512px;
-}
-
-form {
+  display: grid;
+  gap: 1em;
   text-align: center;
-  button {
-    font-size: inherit;
-  }
 }
 
 table {
@@ -21,7 +18,7 @@ table {
 
 th, td {
   border: 1px solid black;
-  padding: 8px;
+  padding: 0.64em;
   width: 50%;
 }
 
@@ -31,12 +28,4 @@ th {
 
 td {
   text-align: left;
-}
-
-footer {
-  text-align: center;
-}
-
-.section {
-  margin: 16px 0;
 }
