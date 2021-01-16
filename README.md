@@ -1,1 +1,1 @@
-# Where Am I? Geolocation in JavaScript
+# Where Am I? Geolocation (in JavaScript)
